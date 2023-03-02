@@ -23,7 +23,8 @@ function App() {
       {randomItem && (
         <div>
           <h2>{randomItem.title}</h2>
-          <p>{randomItem.contentSnippet}</p>
+          <p>{randomItem.contentSnippet.substring(0, randomItem.contentSnippet.length - 91)}</p>
+
           <audio src={randomItem.enclosure.url} controls></audio>
         </div>
       )}
