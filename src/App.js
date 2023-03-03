@@ -7,34 +7,57 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color:  #FFDFD3;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    padding: 2rem;
+  }
 `;
 
 const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
+  background-color: #FFB6C1;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px #000000;
   padding: 2rem;
-  background-color: #ffffcc;
-  border: 8px solid #000000;
-  box-shadow: 10px 10px 0px #000000;
   margin: 2rem;
+  max-width: 80%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Content = styled.p`
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
-const Audio = styled.audio`
-  margin-top: 1rem;
+const Button = styled.button`
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+  }
 `;
 
 function App() {
@@ -59,7 +82,7 @@ function App() {
         <Card>
           <Title>{randomItem.title}</Title>
           <Content>{randomItem.contentSnippet.substring(0, randomItem.contentSnippet.length - 91)}</Content>
-          <Audio src={randomItem.enclosure.url} controls></Audio>
+          <Button><audio src={randomItem.enclosure.url} controls></audio></Button>
         </Card>
       )}
     </Container>
