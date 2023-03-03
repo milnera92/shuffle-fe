@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     console.log('useEffect called');
-    fetch('/rss')
+    fetch('https://shuffle-be.onrender.com/rss')
       .then(response => response.json())
       .then(data => {
         // setRssData(data);
